@@ -1,1 +1,36 @@
 = Debian package modeling
+
+This project proposes to use a Domain Specific Language to build Debian packages.
+This DSL will be based on Gradle's
+https://docs.gradle.org/current/userguide/pt06.html[Software Model]
+
+== Why does this project exist?
+
+I'm a Debian user for a long time and I appreciate the project for what it has given me.
+I always wanted to give back and I tried with building packages.
+I always failed. I believe the reason for my failure is because the task of building a package according to Debian specification is very hard. I hope this project will help solve most of the technical complexities involved with building a Debian project according with Debian quality expectations.
+
+== Goals
+
+.This project has the following goals
+* be able to build a deb package
+* define a DSL for building Debian packages
+* provide an easy way to migrate existing builds - without sacrificing the DSL expressiveness
+
+== Why Gradle?
+
+Every solution is based/requires something that already exists.
+
+For convenience reasons we chose to use Gradle to define the DSL. This is because Gradle tries to solve the problem of building software using a Domain Specific Model.
+
+Gradle is built with Java however, and that creates a big problem for building Debian packages because it will require a build dependency on Gradle, Groovy and the OpenJDK. These are quite big dependencies and will limit the use of this project to Java based languages, at first.
+
+If this project is successful in defining a proper DSL for building Debian packages, then we might use the experience to build a DSL implementation in a language with minimal build-dependencies.
+
+OpenJDK is platform independent and build on most platforms supported by Debian and this is a great thing. It means this project will be usable on all of them.
+
+== References
+
+* https://docs.gradle.org/current/userguide/pt06.html
+* https://www.debian.org/doc/debian-policy/
+* https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html
