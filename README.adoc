@@ -1,4 +1,4 @@
-= Debian package modeling
+= Debian Java Tools
 
 This project proposes to use a Domain Specific Language to build Debian packages.
 This DSL will be based on Gradle's
